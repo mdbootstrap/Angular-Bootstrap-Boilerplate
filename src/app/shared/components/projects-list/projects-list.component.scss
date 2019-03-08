@@ -1,0 +1,31 @@
+.projects-list {
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.project {
+    width: 80%;
+    margin: 1rem;
+}
+
+@media (min-width: 768px) {
+    .project {
+        width: calc(50% - 2rem);
+    }
+
+    .projects-list {
+        justify-content: normal;
+    }
+}
+
+@media (min-width: 992px) {
+    .project {
+        width: calc(33.3333% - 2rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .project {
+        width: calc(25% - 3rem);
+    }
+}

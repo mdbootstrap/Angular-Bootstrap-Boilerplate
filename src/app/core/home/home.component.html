@@ -1,0 +1,7 @@
+<div *ngIf="isLoading$ | async" class="d-flex justify-content-center align-items-center" style="margin-top: 400px">
+  <div class="spinner-grow text-primary" role="status" style="width: 4rem; height: 4rem;">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<app-welcome *ngIf="!(isLoggedIn$ | async) && !(isLoading$ | async)"></app-welcome>
+<app-dashboard *ngIf="(isLoggedIn$ | async) && !(isLoading$ | async)"></app-dashboard>

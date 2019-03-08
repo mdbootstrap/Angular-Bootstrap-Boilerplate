@@ -1,0 +1,5 @@
+<div class="projects-list d-flex flex-wrap fadeIn animated">
+    <div class="project" *ngFor="let project of projects; trackBy: trackByFunction">
+      <app-project [project]="project" [editable]="editable" (deleted)="onProjectDelete($event)" (edited)="onProjectEdit($event)"></app-project>
+    </div>
+</div>

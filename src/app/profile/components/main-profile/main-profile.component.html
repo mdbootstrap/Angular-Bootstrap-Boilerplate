@@ -1,0 +1,28 @@
+<mdb-card>
+  <mdb-card-body>
+    <h3 class="h2-responsive mb-4">
+      <strong>Edit profile</strong>
+    </h3>
+
+    <!--Body-->
+    <form [formGroup]="updateProfileForm">
+      <h5 class="h5-responsive">Display name</h5>
+      <div class="md-form">
+        <i class="fa fa-user prefix"></i>
+        <input type="text" id="form1" class="form-control" mdbInput formControlName="displayName" />
+        <label for="form1">Display name</label>
+      </div>
+
+      <h5 class="h5-responsive">Photo Url</h5>
+      <div class="md-form">
+        <i class="fa fa-user prefix"></i>
+        <input type="text" id="form2" class="form-control" mdbInput formControlName="photoUrl" />
+        <label for="form2">Photo Url</label>
+      </div>
+
+      <div class="text-right">
+        <button type="button" mdbBtn color="primary" (click)="onProfileUpdate()">Update profile</button>
+      </div>
+    </form>
+  </mdb-card-body>
+</mdb-card>

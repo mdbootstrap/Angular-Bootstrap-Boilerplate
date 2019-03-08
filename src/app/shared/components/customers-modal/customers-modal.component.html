@@ -1,0 +1,34 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100" id="myModalLabel">{{ heading }}</h4>
+  </div>
+  <div class="modal-body">
+    <form #customerForm="ngForm">
+      <div class="md-form">
+        <input type="text" id="id" name="id" class="form-control" [(ngModel)]="customer.id" mdbInput mdbValidate [validateSuccess]="false" #id="ngModel" required>
+        <label for="id">Id</label>
+        <mdb-error *ngIf="id && id.invalid && (id.dirty || id.touched)">Id is required</mdb-error>
+      </div>
+
+      <div class="md-form">
+        <input type="text" id="name" name="name" class="form-control" [(ngModel)]="customer.name" mdbInput mdbValidate [validateSuccess]="false" #name="ngModel" required>
+        <label for="name">Name</label>
+        <mdb-error *ngIf="name && name.invalid && (name.dirty || name.touched)">Name is required</mdb-error>
+      </div>
+
+      <div class="md-form">
+        <textarea type="text" id="description" name="description" class="md-textarea form-control" [(ngModel)]="customer.description" mdbInput mdbValidate [validateSuccess]="false" #description="ngModel" required></textarea>
+        <label for="description">Description</label>
+        <mdb-error *ngIf="description && description.invalid && (description.dirty || description.touched)">Description is required</mdb-error>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" mdbBtn color="white" class="black-text waves-light" aria-label="Close" (click)="modalRef.hide()"
+      mdbWavesEffect>Close</button>
+    <button type="button" mdbBtn color="red" class="relative waves-light" mdbWavesEffect (click)="onSave()">Save</button>
+  </div>
+</div>

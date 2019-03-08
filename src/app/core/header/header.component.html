@@ -1,0 +1,67 @@
+<!--Navbar-->
+<mdb-navbar #navbar SideClass="navbar navbar-expand-lg navbar-light white justify-content-between" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand>
+      <a class="navbar-brand" routerLink="/">
+          <img src="https://mdbootstrap.com/img/Marketing/other/logo/logo-mdb-angular-small.png" height="30" alt="">
+      </a>
+  </mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li *ngIf="isLoggedIn && !isLoading" class="nav-item">
+        <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li *ngIf="isLoggedIn && !isLoading" class="nav-item">
+        <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/projects" routerLinkActive="active" mdbWavesEffect>Projects</a>
+      </li>
+      <li *ngIf="isLoggedIn && !isLoading" class="nav-item">
+        <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/customers" routerLinkActive="active" mdbWavesEffect>Tables</a>
+      </li>
+      <li *ngIf="isLoggedIn && !isLoading" class="nav-item">
+        <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/charts" routerLinkActive="active" mdbWavesEffect>Charts</a>
+      </li>
+      <li *ngIf="isLoggedIn && !isLoading" class="nav-item">
+        <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/profile" routerLinkActive="active" mdbWavesEffect>Profile</a>
+      </li>
+      <li *ngIf="isLoggedIn && !isLoading && isAdmin" class="nav-item">
+        <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/admin-panel" routerLinkActive="active" mdbWavesEffect>Admin panel</a>
+      </li>
+    </ul>
+    <!-- Links -->
+
+    <!-- Search form -->
+    <ul class="navbar-nav" *ngIf="!isLoggedIn && !isLoading">
+      <li class="nav-item waves-light">
+        <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/login" mdbWavesEffect>Login</a>
+      </li>
+      <li class="nav-item waves-light">
+        <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/register" mdbWavesEffect>Register</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav" *ngIf="isLoggedIn && !isLoading">
+      <li class="nav-link waves-light dropdown avatar p-0 avatar-dropdown" mdbDropdown>
+        <a mdbDropdownToggle mdbWavesEffect type="button" class="nav-link waves-light" mdbWavesEffect>
+          <img *ngIf="user.photoUrl" src="{{ user.photoUrl }}" height="35" width="35" class="rounded-circle z-depth-0" alt="avatar image">
+        </a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown-primary" role="menu">
+              <div *ngIf="user.displayName" class="text-center py-2 px-2">{{ user.displayName }}</div>
+              <div *ngIf="!user.displayName" class="text-center py-2 px-2">Anonymous user</div>
+              <div class="divider dropdown-divider"></div>
+              <a class="dropdown-item text-center waves-light" mdbWavesEffect (click)="onLogout(); navbar.hide()">Logout</a>
+          </div>
+      </li>
+      <li class="nav-item waves-light logout-button">
+        <a class="nav-link waves-light" mdbWavesEffect (click)="onLogout(); navbar.hide()">Logout</a>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

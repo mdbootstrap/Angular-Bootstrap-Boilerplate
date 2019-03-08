@@ -1,0 +1,29 @@
+<div class="white px-4 section-header">
+  <h3>Admin panel</h3>
+  <p class="grey-text pt-3">Change settings for every user in your application</p>
+</div>
+
+<div *ngIf="usersListLoading$ | async" class="d-flex justify-content-center align-items-center" style="margin-top: 300px">
+  <div class="spinner-grow text-primary" role="status" style="width: 4rem; height: 4rem;">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="!(usersListLoading$ | async)" class="container-fluid mt-3 pb-5">
+  <app-users-list *ngIf="!selectedUser" [users]="users$ | async" (userSelected)="onUserSelect($event)" (addAdmin)="addAdminPrivileges($event)"
+    (removeAdmin)="removeAdminPrivileges($event)"></app-users-list>
+  <app-user-detail
+    *ngIf="selectedUser"
+    [user]="selectedUser$ | async"
+    [projects]="userProjects$ | async"
+    [customers]="userCustomers$ | async"
+    [userProjectsLoading]="userProjectsLoading$ | async"
+    [userCustomersLoading]="userCustomersLoading$ | async"
+    (detailsClosed)="onDetailsClose()"
+    (projectsLoad)="onProjectsLoad()"
+    (customersLoad)="onCustomersLoad()"
+    (projectDeleted)="onProjectDelete($event)"
+    (customerDeleted)="onCustomerDelete($event)"
+    (addAdmin)="addAdminPrivileges($event)"
+    (removeAdmin)="removeAdminPrivileges($event)"></app-user-detail>
+</div>

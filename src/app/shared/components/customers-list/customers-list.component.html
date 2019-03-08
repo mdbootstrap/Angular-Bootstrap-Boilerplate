@@ -1,0 +1,24 @@
+<div class="z-depth-1">
+  <table class="table table-striped table-responsive-md btn-table" mdbTable borderless="true">
+    <thead style="background-color: transparent">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let customer of customers; trackBy: trackByFn">
+        <th scope="row">{{ customer.id }}</th>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.description }}</td>
+        <td>
+          <a (click)="onEdit(customer)" class="mr-2"><mdb-icon fas icon="edit"></mdb-icon></a>
+          <a (click)="onDelete(customer)"><mdb-icon fas icon="trash"></mdb-icon></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

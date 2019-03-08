@@ -1,0 +1,76 @@
+<div class="white px-4 section-header">
+  <h3>Charts</h3>
+  <p class="grey-text pt-3">Visualisation of data downloaded from an external API</p>
+</div>
+
+<div *ngIf="isLoading$ | async" class="d-flex justify-content-center align-items-center" style="margin-top: 300px">
+  <div class="spinner-grow text-primary" role="status" style="width: 4rem; height: 4rem;">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="!(isLoading$ | async)" class="charts-container p-5">
+
+  <div class="row mb-3">
+    <div class="col-md-12">
+      <mdb-card>
+        <mdb-card-body>
+          <div class="pl-4">
+            <button mdbBtn color="primary" size="sm" (click)="getExchangeRates('USD')">USD</button>
+            <button mdbBtn color="primary" size="sm" (click)="getExchangeRates('PLN')">PLN</button>
+            <button mdbBtn color="primary" size="sm" (click)="getExchangeRates('GBP')">GBP</button>
+            <button mdbBtn color="primary" size="sm" (click)="getExchangeRates('JPY')">JPY</button>
+            <button mdbBtn color="primary" size="sm" (click)="getExchangeRates('RUB')">RUB</button>
+          </div>
+          <app-line-chart [dataset]="dataset" [labels]="labels"></app-line-chart>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <table class="white text-center z-depth-1" mdbTable>
+        <thead class="primary-color text-white">
+          <tr>
+            <th>Value</th>
+            <th>Label</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let value of barChartDataset[0].data; let i = index">
+            <th scope="row">{{ value }}</th>
+            <td>{{ barChartLabels[i] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6">
+      <mdb-card>
+        <mdb-card-body>
+          <app-pie-chart [dataset]="barChartDataset" [labels]="barChartLabels"></app-pie-chart>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6 mb-3">
+      <mdb-card>
+        <mdb-card-body>
+          <app-bar-chart [dataset]="barChartDataset" [labels]="barChartLabels"></app-bar-chart>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <mdb-card>
+        <mdb-card-body>
+          <app-doughnut-chart [dataset]="barChartDataset" [labels]="barChartLabels"></app-doughnut-chart>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+
+</div>

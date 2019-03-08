@@ -1,0 +1,21 @@
+.nav-link.active {
+  background-color: #eee;
+}
+
+.logout-button {
+  display: none;
+}
+
+.avatar-dropdown {
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .avatar-dropdown {
+    display: none;
+  }
+
+  .logout-button {
+    display: block;
+  }
+}

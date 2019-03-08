@@ -1,0 +1,33 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100" id="myModalLabel">{{ heading }}</h4>
+  </div>
+  <div class="modal-body">
+    <form #projectForm="ngForm">
+      <div class="md-form">
+        <input type="text" class="form-control" name="title" [(ngModel)]="project.title" mdbInput mdbValidate [validateSuccess]="false" #title="ngModel" required>
+        <label for="title">Title</label>
+        <mdb-error *ngIf="title && title.invalid && (title.dirty || title.touched)">Title is required</mdb-error>
+      </div>
+
+      <div class="md-form">
+        <textarea type="text" id="description" class="md-textarea form-control" name="description" [(ngModel)]="project.description" mdbInput mdbValidate [validateSuccess]="false" #description="ngModel" required></textarea>
+        <label for="description">Description</label>
+        <mdb-error *ngIf="description && description.invalid && (description.dirty || description.touched)">Description is required</mdb-error>
+      </div>
+
+      <div class="md-form">
+        <input type="text" id="photo" class="form-control" name="photoUrl" [(ngModel)]="project.photoUrl" mdbInput>
+        <label for="photo">Photo URL</label>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" mdbBtn color="white" class="black-text waves-light" aria-label="Close" (click)="modalRef.hide()"
+      mdbWavesEffect>Close</button>
+    <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect (click)="onSave()">Save!</button>
+  </div>
+</div>

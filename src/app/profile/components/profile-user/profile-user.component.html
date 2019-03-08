@@ -1,0 +1,17 @@
+<mdb-card>
+  <mdb-card-body>
+    <div class="text-center">
+      <div class="avatar" style="margin-top: -60px">
+          <img *ngIf="user.photoUrl" src="{{ user.photoUrl }}" height="96" width="96" class="rounded-circle z-depth-0" alt="avatar image">
+      </div>
+
+      <h3 *ngIf="user.displayName" class="mt-4">{{ user.displayName }}</h3>
+      <h3 *ngIf="!user.displayName" class="mt-4">Anonymous user</h3>
+
+      <a mdbBtn class="mt-3" color="primary" (click)="onLogout()">
+        <i class="fa fa-sign-out"></i>
+        Logout
+      </a>
+    </div>
+  </mdb-card-body>
+</mdb-card>

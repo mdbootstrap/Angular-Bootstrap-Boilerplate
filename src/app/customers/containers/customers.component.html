@@ -1,0 +1,20 @@
+<div class="white px-4 section-header">
+  <h3>Customers list</h3>
+  <p class="grey-text pt-3">Manage your customers list</p>
+</div>
+
+<div class="container-fluid pt-5 pb-5">
+  <div class="pt-3 pb-5">
+    <button mdbBtn color="primary" (click)="onAddCustomer()">Add new customer</button>
+
+    <div *ngIf="customers" class="mt-4 white">
+      <app-customers-list [customers]="customers" (customerEdited)="onCustomerEdit($event)" (customerDeleted)="onCustomerDelete($event)"></app-customers-list>
+    </div>
+
+    <div *ngIf="isLoading$ | async" class="d-flex justify-content-center align-items-center" style="margin-top: 200px">
+      <div class="spinner-grow text-primary" role="status" style="width: 4rem; height: 4rem;">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>

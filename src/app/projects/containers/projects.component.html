@@ -1,0 +1,17 @@
+<div class="white px-4 section-header">
+  <h3>Projects list</h3>
+  <p class="grey-text pt-3">Add, edit and delete your projects</p>
+</div>
+
+<div class="container-fluid pb-5">
+  <div class="py-5">
+      <button mdbBtn color="primary" class="ml-3" (click)="openAddProjectModal()">Add new project</button>
+      <app-projects-list [projects]="projects$ | async" (projectDeleted)="onProjectDelete($event)" (projectEdited)="onProjectEdit($event)"></app-projects-list>
+
+    <div *ngIf="isLoading$ | async" class="d-flex justify-content-center align-items-center" style="margin-top: 200px">
+      <div class="spinner-grow text-primary" role="status" style="width: 4rem; height: 4rem;">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>

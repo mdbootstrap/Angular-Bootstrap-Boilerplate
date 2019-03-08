@@ -1,0 +1,15 @@
+<div class="white px-4 section-header">
+  <h3>Profile</h3>
+  <p class="grey-text pt-3">Change your personal information</p>
+</div>
+
+<div class="container py-5">
+  <div class="row mx-auto py-5">
+    <div class="col-md-4 mt-3">
+      <app-profile-user [user]="user$ | async" (logout)="logoutUser($event)"></app-profile-user>
+    </div>
+    <div class="col-md-8 mt-3">
+        <app-main-profile [user]="user$ | async" (profileUpdate)="updateProfile($event)"></app-main-profile>
+    </div>
+  </div>
+</div>

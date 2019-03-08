@@ -1,0 +1,5 @@
+<div class="users-list d-flex flex-wrap">
+  <div class="user" *ngFor="let user of users; trackBy: trackByFn">
+    <app-user [user]="user" (userSelected)="onUserSelected($event)" (addAdmin)="onAddAdmin($event)" (removeAdmin)="onRemoveAdmin($event)"></app-user>
+  </div>
+</div>
