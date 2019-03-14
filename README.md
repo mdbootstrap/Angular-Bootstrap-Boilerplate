@@ -26,7 +26,7 @@ ________
 # Installation:
 
 **Firebase configuration:**
-http://mdbootstrap.com/angular/getting-started/boilerplate-installation
+http://mdbootstrap.com/docs/angular/getting-started/boilerplate-installation
 
 **Install:**
 npm i
