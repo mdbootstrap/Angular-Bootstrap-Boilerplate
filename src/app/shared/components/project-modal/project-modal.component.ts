@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./project-modal.component.scss']
 })
 export class ProjectModalComponent implements OnInit {
-  @ViewChild('projectForm') projectForm: NgForm;
+  @ViewChild('projectForm', { static: true }) projectForm: NgForm;
 
   heading: string;
 

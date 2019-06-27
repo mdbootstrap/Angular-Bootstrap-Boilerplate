@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./customers-modal.component.scss']
 })
 export class CustomersModalComponent implements OnInit {
-  @ViewChild('customerForm') customerForm: NgForm;
+  @ViewChild('customerForm', { static: true }) customerForm: NgForm;
 
   heading: string;
   customer: Customer = {};
