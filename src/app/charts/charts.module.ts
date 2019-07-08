@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChartsModule, CardsFreeModule, ButtonsModule, TableModule } from 'angular-bootstrap-md';
+import { ChartsModule, CardsModule, ButtonsModule, TableModule } from 'angular-bootstrap-md';
 import { ChartsComponent } from './containers/charts/charts.component';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
 import { ChartsRoutingModule } from './charts-routing.module';
@@ -16,7 +16,7 @@ import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 @NgModule({
   imports: [
     CommonModule,
-    CardsFreeModule,
+    CardsModule,
     ChartsModule,
     ButtonsModule,
     TableModule,

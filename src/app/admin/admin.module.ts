@@ -9,7 +9,7 @@ import * as fromAdmin from './store/admin.reducer';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AdminEffects } from './store/admin.effects';
-import { CollapseModule, CardsFreeModule, ButtonsModule, BadgeModule, IconsModule, DropdownModule } from 'angular-bootstrap-md';
+import { CollapseModule, CardsModule, ButtonsModule, BadgeModule, IconsModule, DropdownModule } from 'angular-bootstrap-md';
 import { SharedModule } from '../shared/shared.module';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
@@ -20,7 +20,7 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
     SharedModule,
     BrowserAnimationsModule,
     CollapseModule,
-    CardsFreeModule,
+    CardsModule,
     DropdownModule,
     BadgeModule,
     ButtonsModule,

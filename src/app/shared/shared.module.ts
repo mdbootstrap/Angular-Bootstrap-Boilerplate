@@ -4,7 +4,7 @@ import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.
 import {
   ButtonsModule,
   InputsModule,
-  CardsFreeModule,
+  CardsModule,
   InputUtilitiesModule,
   IconsModule
 } from 'angular-bootstrap-md';
@@ -31,7 +31,7 @@ import { CustomersListComponent } from './components/customers-list/customers-li
     IconsModule,
     FormsModule,
     ButtonsModule,
-    CardsFreeModule
+    CardsModule
   ],
   exports: [ProjectsListComponent, ProjectComponent, CustomersListComponent],
   providers: [],

@@ -7,7 +7,7 @@ import { AuthEffects } from './store/auth.effects';
 import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
-import { InputsModule, ButtonsModule, CardsFreeModule, IconsModule, WavesModule, InputUtilitiesModule } from 'angular-bootstrap-md';
+import { InputsModule, ButtonsModule, CardsModule, IconsModule, WavesModule, InputUtilitiesModule } from 'angular-bootstrap-md';
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 
@@ -19,7 +19,7 @@ import { RouterModule } from '@angular/router';
     InputsModule,
     InputUtilitiesModule,
     ButtonsModule,
-    CardsFreeModule,
+    CardsModule,
     WavesModule,
     RouterModule,
     IconsModule,

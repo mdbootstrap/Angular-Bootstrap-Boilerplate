@@ -8,7 +8,7 @@ import { MainComponent } from './main/main.component';
 import {
   NavbarModule,
   DropdownModule,
-  CardsFreeModule,
+  CardsModule,
   ButtonsModule,
   IconsModule
 } from 'angular-bootstrap-md';
@@ -24,7 +24,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     IconsModule,
     RouterModule,
     DropdownModule.forRoot(),
-    CardsFreeModule,
+    CardsModule,
     ButtonsModule
   ],
   declarations: [
