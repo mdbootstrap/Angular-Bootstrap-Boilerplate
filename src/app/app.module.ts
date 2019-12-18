@@ -20,11 +20,8 @@ import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
 import { ModalModule } from 'angular-bootstrap-md';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AuthModule,
@@ -38,10 +35,16 @@ import { ModalModule } from 'angular-bootstrap-md';
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     CoreModule,
-    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreModule.forRoot(reducers, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      },
+      metaReducers
+    }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([])
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
