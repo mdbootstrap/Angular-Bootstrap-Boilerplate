@@ -12,10 +12,10 @@ import { AdminGuard } from './admin/guard/admin.guard';
 const routes: Routes = [
   { path: '', component: HomeComponent, children: [
     { path: '', component: MainComponent},
-    { path: 'projects', loadChildren: './projects/projects.module#ProjectsModule', canActivate: [AuthGuard]},
-    { path: 'customers', loadChildren: './customers/customers.module#CustomersModule', canActivate: [AuthGuard]},
-    { path: 'profile', loadChildren: './profile/profile.module#ProfileModule', canActivate: [AuthGuard] },
-    { path: 'charts', loadChildren: './charts/charts.module#ChartsDataModule', canActivate: [AuthGuard] },
+    { path: 'projects', loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule), canActivate: [AuthGuard]},
+    { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule), canActivate: [AuthGuard]},
+    { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule), canActivate: [AuthGuard] },
+    { path: 'charts', loadChildren: () => import('./charts/charts.module').then(m => m.ChartsDataModule), canActivate: [AuthGuard] },
     { path: 'admin-panel', component: AdminComponent, canActivate: [AdminGuard]}
   ]},
   { path: 'register', component: RegisterComponent },
