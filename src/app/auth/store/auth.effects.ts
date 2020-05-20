@@ -72,8 +72,8 @@ export class AuthEffects {
     map( (action: auth.CheckUserRole) => action.payload),
     switchMap( (payload: any) => this.authService.checkUserRole(payload.uid)
       .pipe(
-        map( (isAdmin: boolean) => {
-          return new auth.UpdateUserRole({ isAdmin });
+        map( (user: User) => {
+          return new auth.UpdateUserRole({ isAdmin: user.isAdmin || false });
         }),
         catchError( (error: any) => of(new auth.AuthError({ error })))
       )

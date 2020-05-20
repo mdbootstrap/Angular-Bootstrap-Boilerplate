@@ -61,7 +61,7 @@ export class AuthService {
   }
 
   checkUserRole(uid: string) {
-    return this.db.object('admins/' + uid).valueChanges();
+    return this.db.object('users/' + uid).valueChanges();
   }
 
   getAuthState() {
