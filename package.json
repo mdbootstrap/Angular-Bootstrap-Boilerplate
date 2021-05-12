@@ -27,7 +27,7 @@
     "@types/chart.js": "^2.7.40",
     "@types/md5": "^2.1.33",
     "angular-bootstrap-md": "^8.8.0",
-    "chart.js": "^2.7.2",
+    "chart.js": "^2.9.4",
     "core-js": "^3.5.0",
     "express": "^4.16.4",
     "firebase": "^6.2.2",
