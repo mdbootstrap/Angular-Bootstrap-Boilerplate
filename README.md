@@ -4,9 +4,6 @@ Free, responsive CRUD application starter with NgRx state management, Firebase b
 
 ________
 
-# Live Preview:
-## https://ng-boilerplate.mdbootstrap.com/
-
 # Technologies used
 
 * Angular 7
@@ -26,7 +23,7 @@ ________
 # Installation:
 
 **Firebase configuration:**
-http://mdbootstrap.com/docs/angular/getting-started/boilerplate-installation
+https://mdbootstrap.com/freebies/angular/boilerplate/
 
 **Install:**
 npm i
@@ -42,28 +39,13 @@ ng build --prod
 
 
 # FAQ
-http://mdbootstrap.com/angular/faq/
+https://mdbootstrap.com/docs/angular/pro/faq/
 
 # Documentation
 https://mdbootstrap.com/docs/angular/
 
 # Support:
-http://mdbootstrap.com/forums/forum/support/
-
-
-# Useful Links:
-
-Getting started: https://mdbootstrap.com/angular/angular-bootstrap-getting-started/
-
-5 min quick start: https://mdbootstrap.com/angular/mdb-quick-start/
-
-Material Design + Bootstrap Tutorial: https://mdbootstrap.com/bootstrap-tutorial/
-
-Material Design + WordPress Tutorial: https://mdbootstrap.com/wordpress-tutorial/
-
-Other Freebies: https://mdbootstrap.com/freebies/
-
-Premium Templates: https://mdbootstrap.com/templates/
+http://mdbootstrap.com/support/
 
 
 # Social Media:
@@ -73,8 +55,6 @@ Twitter: https://twitter.com/MDBootstrap
 Facebook: https://www.facebook.com/mdbootstrap
 
 Pinterest: https://pl.pinterest.com/mdbootstrap
-
-Google+: https://plus.google.com/u/0/b/107863090883699620484/+Mdbootstrap/posts
 
 Dribbble: https://dribbble.com/mdbootstrap
 
